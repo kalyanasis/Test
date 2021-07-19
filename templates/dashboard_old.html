@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+{% if session['logged_in'] %}
+	<h1>Hello Admin</h1>
+	<a href="/logout">Logout</a> <br> <br>
+	{% if data %}
+	<!-- <h3>{{data}}</h3> -->
+		<table border="1">
+			<tr>
+				<th>id</th>
+				<th>Project Name</th>
+			</tr>
+
+			{% for task in data %}
+				<tr>
+					<td>{{task.id}}</td>
+					<td>{{task.project_name}}</td>
+				</tr>
+				
+			{% endfor %}
+		</table>
+	{% else %}
+
+
+	{% endif %}
+
+{% else %}
+<p>Not login!</p>
+
+
+{% endif %}
+{% endblock %}

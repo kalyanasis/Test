@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Agile {% endblock %}
+
+{% block body %}
+
+<div class="jumbotron p-3">
+    <div class="well text-center">
+        {% if session['user_type']==0 %}
+            <h1>Admin Dashboard </h1>
+        {% else %}
+            <h1>Employee Dashboard </h1>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
